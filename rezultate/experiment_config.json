@@ -1,0 +1,30 @@
+{
+  "design": "Direct single-target forecasting at 24h, 7d, 14d leads",
+  "note": "Not a full 96/672/1344-step forecast path",
+  "origin_stride": "96 (daily) for all horizons",
+  "split": "chronological 60/20/20 with horizon embargo",
+  "baseline": "demand at origin minus 7 days",
+  "seed": 13,
+  "epochs_max": 60,
+  "features": [
+    "lag_1",
+    "lag_4",
+    "lag_96",
+    "lag_192",
+    "lag_672",
+    "mean_96",
+    "mean_672",
+    "std_96",
+    "hour_sin",
+    "hour_cos",
+    "week_sin",
+    "week_cos",
+    "year_sin",
+    "year_cos"
+  ],
+  "horizons": {
+    "24h": 96,
+    "7d": 672,
+    "14d": 1344
+  }
+}
